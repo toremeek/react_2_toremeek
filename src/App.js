@@ -23,11 +23,19 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const id = createId();
-    setData((prev) => [...prev, {id, title: title, content: content}]);
-    setContent("");
-    setInputFromTitle("");
-    }
+if (title.length > 0 && content.length > 0) {
+  const id = createId();
+  setData((prev) => [...prev, {id, title: title, content: content}]);
+  setContent("");
+  setInputFromTitle("");
+}
+else {
+  alert("Du må fylle inn begge felter!");
+  setData((prev) => [...prev]);
+  setContent("");
+  setInputFromTitle("");
+  }
+}
 
   const removeCards = (id) => {
   const oldCards = [...data];
@@ -36,19 +44,18 @@ function App() {
 
      }
 
-    
-
 
 return (
 <div className="App">
     <Header />
       <Form updateState={updateState} handleSubmit={handleSubmit} updateContent={updateContent} content={content} title={title} />
+      <p className="Feil"></p>
   <section className="wrapper_cards">
   {data.length > 0 ? data.map(item => [
     <article key={item.id}>
             <h4>{item.title}</h4>
             <p>{item.content}</p>
-            <button type="button" className="button_cards" onClick={ () => removeCards(item.id)}>Complete</button>
+            <button type="button" className="button_cards" onClick={ () => removeCards(item.id)}>Fjern</button>
         </article>
 
   ])
