@@ -1,5 +1,3 @@
-
-
 const Form = ({updateState, handleSubmit, updateContent, content, title}) => {
     return (
         <>
