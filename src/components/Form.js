@@ -1,7 +1,7 @@
 const Form = ({updateState, handleSubmit, updateContent, content, title}) => {
     return (
         <>
-        <form onSubmit={handleSubmit} className="form"      method="post" action="#">
+        <form onSubmit={handleSubmit} className="form" method="post" action="#">
             <label htmlFor="title1">Title</label>
             <input className="title1" placeholder="Add title" value={title} onChange={updateState} name="title1" rows="1" cols="20"></input>
             <label htmlFor="content1">Content</label>

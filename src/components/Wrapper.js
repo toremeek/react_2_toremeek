@@ -1,5 +1,5 @@
 const Wrapper = (props) => {
-    return <section className="form">{props.children}</section>;
+    return <section className="wrapper_cards">{props.children}</section>;
   };
   
   export default Wrapper;
